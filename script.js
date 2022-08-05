@@ -5,8 +5,10 @@
 
 const container = document.querySelector('.container');
 for(let i = 1 ; i<=256; i++){
-    container.innerHTML+='<div class = "element">'+ i +'</div>\n';
+    container.innerHTML+='<div class = "element" onmouseover="mouseOverEvent()")></div>\n';
 }
 
-
-
+const element = document.querySelector('.element');
+function mouseOverEvent(){
+    element.setAttribute('style', 'background: yellow;');  
+}
