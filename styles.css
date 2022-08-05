@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: #1F2937;
+    align-items: center;
+    color: #F9FAF8;
+    font-size: 20px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    margin: 30px;
+  }
+  .element{
+    border:1px solid black;
+  }
