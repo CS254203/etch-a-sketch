@@ -10,5 +10,6 @@ for(let i = 1 ; i<=256; i++){
 
 const element = document.querySelector('.element');
 function mouseOverEvent(){
+    console.log(element.style.background);
     element.setAttribute('style', 'background: yellow;');  
 }
