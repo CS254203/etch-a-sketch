@@ -1,6 +1,12 @@
 body{
   background-color: #E5E7EB;
 }
+#title{
+  font-weight: bolder;
+  text-align: center;
+  font-size: 50px;
+}
+
 
 .container {
   display: grid;
@@ -8,19 +14,25 @@ body{
   margin: 30px;
   align-items: center;
   justify-content: center;
+  max-height: 800px;
 }
+
 .element{
+  background-color: white;
+  position:sticky;
   min-height: 25px;
   min-width: 25px;
-  border:1px solid black;
+  border:1px solid rgb(156, 156, 156);;
 }
-#button-container{
+
+#clear-button-container, #grid-button-container{
   display:flex;
   justify-content: center;
   align-items: center;
   margin-bottom:15px;
 }
-#clear-button{
+
+#clear-button,#grid-button{
   background-color: #3882F6;
   border: none;
   padding: 15px 72px;
@@ -30,20 +42,50 @@ body{
   font-size: 16px;
   border-radius: 25px;
   color:#F9FAF8;
+  margin-bottom: 100px;
 }
   
-.element:hover {
-    background: yellow;
+#clear-button:hover {
+    background: #1F2937;
   }
 
-  .footer {
-    display: flex;
-    justify-content: center;
-    background-color: #1F2937;
-    align-items: center;
-    color: #F9FAF8;
-    font-size: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+.slidecontainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 15%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #3882F6; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+#slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: white; /* Dor background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+p, #valueOfSlider{
+  margin-top: 20px;
+  font-size: larger;
+  font-weight: bolder;
+}
+.footer {
+display: flex;
+justify-content: center;
+background-color: #1F2937;
+align-items: center;
+color: #F9FAF8;
+font-size: 20px;
+margin-top: 20px;
+}
