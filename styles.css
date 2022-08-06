@@ -25,14 +25,14 @@ body{
   border:1px solid rgb(156, 156, 156);;
 }
 
-#clear-button-container, #grid-button-container{
+#clear-button-container, #grid-button-container ,#color-button-container{
   display:flex;
   justify-content: center;
   align-items: center;
   margin-bottom:15px;
 }
 
-#clear-button,#grid-button{
+#clear-button,#grid-button,#color-button{
   background-color: #3882F6;
   border: none;
   padding: 15px 72px;
@@ -43,9 +43,10 @@ body{
   border-radius: 25px;
   color:#F9FAF8;
   margin-bottom: 100px;
+  width: 300px;
 }
   
-#clear-button:hover {
+#clear-button:hover,#color-button:hover,#grid-button:hover {
     background: #1F2937;
   }
 

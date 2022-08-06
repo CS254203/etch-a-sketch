@@ -1,15 +1,16 @@
 //creates grid
 const container = document.querySelector('.container');
+let color = "red";
 for(let i = 0 ; i<256; i++){
-    container.innerHTML+='<div class = "element" onmouseover="mouseOverEvent()"></div>\n';
+    container.innerHTML+=`<div class = "element" onmouseover="mouseOverEvent('${color}')"></div>\n`;
 }
 
-function mouseOverEvent(){
+function mouseOverEvent(color){
     const myall = Array.from(document.querySelectorAll('.element'));
     const elements = document.querySelectorAll('.element');
     document.addEventListener('mouseover', (e) => {
        if(e.target.classList.contains('element')){
-          elements[myall.indexOf(e.target)].style.background="red"; 
+          elements[myall.indexOf(e.target)].style.background=String(color); 
         }
     });
 }
@@ -23,9 +24,23 @@ function clearButtonMouseClickEvent(){
     }
 }
 
+function colorButtonMouseClickEvent(){
+    var randomColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+    var toggle = 0;
+    const elements = document.querySelector('#color-button');
+    console.log(elements);
+    document.addEventListener('onclick', (e) => {
+        console.log("ENTRE");
+        const elements = document.querySelectorAll('body');
+    });
+
+    while (toggle === 1){
+        mouseOverEvent(randomColor);
+    }
+}
 
 var pressed = 0;
-function gridBUttonMouseClickEvent(){
+function gridButtonMouseClickEvent(){
     if(pressed === 0){
         const elementsArray = Array.from(document.querySelectorAll('.element'));
         const elements = document.querySelectorAll('.element');
@@ -58,17 +73,27 @@ container.insertAdjacentElement('afterend', clearButtonContainer);
 
 
 //creates toggle grid button
-const selectClearButtonContainer = document.querySelector('#clear-button-container');
+const selectClearButtonContainer = document.querySelector('#clear-button-container');//selects the clearbutton container
 const gridButtonContainer = document.createElement('div');
 gridButtonContainer.setAttribute('id', 'grid-button-container');
 const gridButton = document.createElement('button');
 gridButton.setAttribute('id', 'grid-button');
-gridButton.setAttribute('onclick', 'gridBUttonMouseClickEvent()');
+gridButton.setAttribute('onclick', 'gridButtonMouseClickEvent()');
 gridButton.innerHTML="Toggle Grid";
 gridButtonContainer.append(gridButton)
 selectClearButtonContainer.insertAdjacentElement('afterend', gridButtonContainer);
 
 //random color button
+
+const selectGridButtonContainer = document.querySelector('#grid-button-container');
+const colorButtonContainer = document.createElement('div');
+colorButtonContainer.setAttribute('id', 'color-button-container');
+const colorButton = document.createElement('button');
+colorButton.setAttribute('id', 'color-button');
+colorButton.setAttribute('onclick', 'colorButtonMouseClickEvent()');
+colorButton.innerHTML="Random Color";
+colorButtonContainer.append(colorButton)
+selectGridButtonContainer.insertAdjacentElement('afterend', colorButtonContainer);
 
 //slider and it's values
 var slider = document.getElementById("slider");
