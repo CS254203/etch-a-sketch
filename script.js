@@ -11,6 +11,29 @@ const elements = document.querySelectorAll('.element');
 var pressedColorButton = 0;
 var pressedGridButton = 0;
 
+/*createGrid(squareSize);
+
+// Create Squared Divs
+function createDiv(size) {
+  const div = document.createElement('div');
+  div.classList.add('box');
+  div.style.width = `${size}px`;
+  div.style.height = `${size}px`;
+
+  return div;
+}
+
+// Creat The Grid and append it to grid
+function createGrid(gridSize) {
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      grid.appendChild(createDiv(grid.clientWidth / gridSize));
+    }
+  }
+}
+
+*/
+
 function createGrid(){
     for(let i = 0 ; i<256; i++){
         container.innerHTML+=`<div class = "element" onmouseover="mouseOverEvent('${initialColor}')"></div>\n`;
