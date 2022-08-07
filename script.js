@@ -52,7 +52,7 @@ function gridButtonMouseClickEvent(){
         const elementsArray = Array.from(document.querySelectorAll('.element'));
         const elements = document.querySelectorAll('.element');
         for(let i = 0; i<elementsArray.length;i++){
-        elements[i].style.border ="0";
+        elements[i].style.outline ="0";
         }
         pressed=1;
     }
@@ -60,7 +60,7 @@ function gridButtonMouseClickEvent(){
         const elementsArray = Array.from(document.querySelectorAll('.element'));
         const elements = document.querySelectorAll('.element');
         for(let i = 0; i<elementsArray.length;i++){
-        elements[i].style.border ="0.5px solid lightslategray";
+        elements[i].style.outline ="0.5px solid lightslategray";
         }
         pressed=0;
     }
