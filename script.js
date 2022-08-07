@@ -1,8 +1,8 @@
 //creates grid
 const container = document.querySelector('.container');
-let color = "red";
+let initialColor = "red";
 for(let i = 0 ; i<256; i++){
-    container.innerHTML+=`<div class = "element" onmouseover="mouseOverEvent('${color}')"></div>\n`;
+    container.innerHTML+=`<div class = "element" onmouseover="mouseOverEvent('${initialColor}')"></div>\n`;
 }
 
 function mouseOverEvent(color){
@@ -23,20 +23,27 @@ function clearButtonMouseClickEvent(){
     elements[i].style.background ="white";
     }
 }
-
+var toggle = 0;
 function colorButtonMouseClickEvent(){
-    var randomColor = "#"+Math.floor(Math.random()*16777215).toString(16);
-    var toggle = 0;
-    const elements = document.querySelector('#color-button');
-    console.log(elements);
-    document.addEventListener('onclick', (e) => {
-        console.log("ENTRE");
-        const elements = document.querySelectorAll('body');
-    });
-
-    while (toggle === 1){
-        mouseOverEvent(randomColor);
+    if(toggle ===0){
+        toggle =1;
+        var randomColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+        const elementsArray = Array.from(document.querySelectorAll('.element'));
+        const elements = document.querySelectorAll('.element');
+        for(let i = 0; i<elementsArray.length;i++){
+            randomColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+            elements[i].setAttribute("onmouseover", `mouseOverEvent('${randomColor}')`);
+        } 
     }
+    else{
+        toggle=0;
+        const elementsArray = Array.from(document.querySelectorAll('.element'));
+        const elements = document.querySelectorAll('.element');
+        for(let i = 0; i<elementsArray.length;i++){
+            elements[i].setAttribute("onmouseover", `mouseOverEvent('${initialColor}')`);
+        }
+    }
+
 }
 
 var pressed = 0;
@@ -44,7 +51,6 @@ function gridButtonMouseClickEvent(){
     if(pressed === 0){
         const elementsArray = Array.from(document.querySelectorAll('.element'));
         const elements = document.querySelectorAll('.element');
-        console.log(elementsArray.length);
         for(let i = 0; i<elementsArray.length;i++){
         elements[i].style.border ="0";
         }
@@ -53,7 +59,6 @@ function gridButtonMouseClickEvent(){
     else{
         const elementsArray = Array.from(document.querySelectorAll('.element'));
         const elements = document.querySelectorAll('.element');
-        console.log(elementsArray.length);
         for(let i = 0; i<elementsArray.length;i++){
         elements[i].style.border ="0.5px solid lightslategray";
         }
