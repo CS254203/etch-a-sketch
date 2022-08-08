@@ -9,14 +9,20 @@
         <link rel="stylesheet" href="styles.css">
        </head>
 <body>
-    <h1 id="title">Etch-A-Sketch</h1>
     <div class="container-flex">
-    <div class="container"></div>
+        <div class="grid-border">
+        <h1 id="title">Etch-A-Sketch</h1>
+            <div class="grid"></div>
+                <div class="buttons">
+                    <button id = "grid-button" onclick="gridButtonMouseClickEvent()">Grid</button>
+                    <button id="clear-button" onclick="clearButtonMouseClickEvent()">Clear</button>
+                </div>
+            </div>
     </div>
     <div class="slidecontainer">
-        <p>Number Of Cells</p>
+        <p class="text">Number Of Cells</p>
         <input type="range" min="1" max="3" value="3" id="slider">
-        <p>Value: <span id="valueOfSlider"></span></p>
+        <p class="text">Value: <span id="valueOfSlider"></span></p>
     </div>
     <div class="footer">
         <div>

@@ -2,12 +2,13 @@ html{
   block-size:0%;
 }
 body{
-  background-color: #E5E7EB;
+  background-color: #181818;
 }
 #title{
   font-weight: bolder;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
+  color:black;
 }
 .container-flex{
   display: flex;
@@ -16,12 +17,24 @@ body{
   align-items: center;
 }
 
-.container {
+.grid-border{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:600px;
+  width: 600px;
+  background-color: red;
+  border-radius: 25px;
+
+}
+
+.grid {
+  margin-bottom: 20px;
   overflow:hidden;
   display: grid;
   height:400px;
   width: 400px;
-  margin:30px;
 }
 
 .element{
@@ -30,25 +43,26 @@ body{
   outline:1px solid rgb(156, 156, 156);;
 }
 
-#clear-button-container, #grid-button-container ,#color-button-container{
+.buttons{
+  width: 90%;
   display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom:15px;
+  justify-content: space-between;
+  margin-bottom:10px
 }
 
 #clear-button,#grid-button,#color-button{
-  background-color: #3882F6;
+  background-color:#F9FAF8;
   border: none;
-  padding: 15px 72px;
+  padding:0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 25px;
-  color:#F9FAF8;
-  margin-bottom: 100px;
-  width: 300px;
+  border-radius: 80px;
+  color:black;
+  margin-bottom: 0px;
+  width: 70px;
+  height: 70px;
 }
   
 #clear-button:hover,#color-button:hover,#grid-button:hover {
@@ -85,6 +99,9 @@ p, #valueOfSlider{
   margin-top: 20px;
   font-size: larger;
   font-weight: bolder;
+}
+.text{
+  color:white
 }
 .footer {
 display: flex;
