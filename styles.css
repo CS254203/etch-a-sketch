@@ -1,4 +1,6 @@
-
+html{
+  block-size:0%;
+}
 body{
   background-color: #E5E7EB;
 }
@@ -7,21 +9,24 @@ body{
   text-align: center;
   font-size: 50px;
 }
+.container-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .container {
+  overflow:hidden;
   display: grid;
-  grid-template-columns: repeat(16, 30px);
-  margin: 30px;
-  align-items: center;
-  justify-content: center;
-  max-height: 800px;
+  height:400px;
+  width: 400px;
+  margin:30px;
 }
 
 .element{
   background-color: white;
   position:sticky;
-  min-height: 25px;
-  min-width: 25px;
   outline:1px solid rgb(156, 156, 156);;
 }
 
